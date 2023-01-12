@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi PRIMERA calculadora de edad</title>
+    <link href="main.css" type="text/css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="Base">
+                <div class="Enter"><H4>Mi PRIMERA calculadora de edad</H4></div>
+                <div class="Block">
+                    <p class="Title">Día</p>
+                    <input type="number" name="date" id="Date" placeholder="dd" required="Required" minlength="1" maxlength="2" min="1" max="31"/>
+                </div>
+                <div class="Block">
+                    <p class="Title">Mes</p>
+                    <input type="number" name="month" id="Month" placeholder="mm" required="Required" minlength="1" maxlength="2" min="1" max="12"/>
+                </div>
+                <div class="Block">
+                    <p class="Title">Año</p>
+                    <input type="number" name="year" id="Year" placeholder="aaaa" required="Required" minlength="4" maxlength="4" min="1900" max="2023"/>
+                </div>
+            </div>
+            <div class="Base">
+                <div class="Enter">
+                    <input type="button" name="Calcular" value="Calcular" onclick="age()"/> 
+                </div>
+            </div>
+            <div id="age"></div>
+        </form>
+    </div>
+    <footer class="cta">
+        <p>Puedes ver el código aquí</p>
+        <a href="https://github.com/malpicado/primera-calculadora-de-edad.git" target="_blank">VER CÓDIGO</a>
+    </footer>
+    <script src="age.js"></script>
+</body>
+</html>
