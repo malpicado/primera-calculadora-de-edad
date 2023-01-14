@@ -6,16 +6,30 @@ function age() {
   const inputDate = new Date(inputYear + "/" + inputMonth + "/" + inputDay)
   const currentDate = new Date()
   let finalDate = currentDate - inputDate
-  
+
   const dayMS = 3600 * 24 * 1000
   const yearMS = dayMS * 365
   
-  const years = Math.floor(finalDate / yearMS)
-  const days = Math.floor((finalDate % yearMS) / dayMS)
-  const hours = Math.floor((((finalDate % yearMS) / dayMS) - days) * 24)
+  let years = Math.floor(finalDate / yearMS)
+  let days = Math.floor((finalDate % yearMS) / dayMS)
+  let hours = Math.floor((((finalDate % yearMS) / dayMS) - days) * 24)
+  
+  for(let i = inputDate.getYear(); i <= currentDate.getYear(); i++) {
+    if(i % 4 === 0) days--
+  }
 
-  document.getElementById("age").innerHTML = `Tu edad es ${years} años ${days} dias y ${hours} horas`
+  years = years > 0 ? ` ${years} años` : ""
+  days = days > 0 ? ` ${days} días` : ""
+  hours = hours > 0? ` ${hours} horas` : ""
+  
+  if(days === "") hours = ""
+  const message = finalDate > 0 
+  			? `Tu edad es:${years}${days}${hours}`
+  			: "Lo siento, está persona es del futuro"
+	
+  document.getElementById("age").innerHTML = message
 }
+
 
 /* before version
 function age() {
